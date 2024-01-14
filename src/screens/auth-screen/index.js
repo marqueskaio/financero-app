@@ -11,7 +11,7 @@ export const AuthScreen = () => {
             <Text style={{fontWeight:"bold", alignItems:"flex-start"}}>E-mail:</Text>
             <TextInput style={{backgroundColor:"rgba(0,0,0,0.1)", borderRadius:4, marginBottom:8}} placeholder={"Digite seu E-mail"}/>
             <Text style={{fontWeight:"bold", alignItems:"flex-start"}}>Senha:</Text>
-            <TextInput style={{backgroundColor:"rgba(0,0,0,0.1)", borderRadius:4,marginBottom:32}}placeholder={"Digite sua Senha"}/>
+            <TextInput style={{backgroundColor:"rgba(0,0,0,0.1)", borderRadius:4,marginBottom:32}} placeholder={"Digite sua Senha"}/>
             <Button title={"Entrar"} color={"orange"}/>
             <Text style={{paddingVertical:20, textAlign:"center"}}>Ainda não possui conta?</Text>
             <Button title={"Criar Conta"} color={"orange"}/>
