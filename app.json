@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "dream-book-app",
+    "slug": "dream-book-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
