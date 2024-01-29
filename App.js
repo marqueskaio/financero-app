@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import {HomeScreen} from "./src/screens/home-screen";
 import 'react-native-gesture-handler';
 import {AuthScreen} from "./src/screens/auth-screen";
+import {RegisterScreen} from "./src/screens/register-screen";
 
 
 const Stack = createStackNavigator();
@@ -25,6 +26,7 @@ export default function App() {
         ) : (
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name={'Auth'} component={AuthScreen}/>
+            <Stack.Screen name={'Register'} component={RegisterScreen}/>
           </Stack.Navigator>
         )}
       </NavigationContainer>
