@@ -1,12 +1,17 @@
 import {Image, Text, View} from "react-native";
 
-export const LoginBannerComponent = () =>{
+interface props {
+    height?:string,
+    width?:string
+}
+
+export const LoginBannerComponent = ({height, width}:props) =>{
     return(
         <View
             style={{
                 backgroundColor:"orange",
-                width:"100%",
-                height:"40%",
+                width:!width ? "100%" : width,
+                height:!height ? "40%" : height,
                 flexDirection:"row",
                 justifyContent: "center",
                 alignItems:"center"
