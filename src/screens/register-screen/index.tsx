@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { View, Text, TextInput} from "react-native"
 import { ContainerComponent } from "../../hoc/container-component"
 import { LoginBannerComponent } from "../../components/login-banner-component"
@@ -23,8 +23,8 @@ export const RegisterScreen = () => {
                     <InputComponent title={"Nome"}/>
                     <InputComponent title={"Sobrenome"}/>
                 </View>
-                    <InputComponent title={"E-mail"}/>
-                    <InputComponent title={"Senha"}/>
+                    <InputComponent width={"60%"} title={"E-mail"}/>
+                    <InputComponent width={"60%"} title={"Senha"}/>
             </View>
             <TouchableOpacity>
                 <View style={{backgroundColor:"orange", alignSelf:"center", margin:4, padding:8, borderRadius:5,}}>
