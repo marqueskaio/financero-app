@@ -1,13 +1,14 @@
 import React from "react"
-import {View} from "react-native";
+import {Dimensions, View} from "react-native";
 
+const {width,height} = Dimensions.get("window")
 interface containerProps {
   children?: any
 }
 
 export const ContainerComponent = ({children}: containerProps) => {
   return (
-    <View>
+    <View style={{maxWidth:width,maxHeight:height}}>
       {children}
     </View>
   )

@@ -14,17 +14,17 @@ export const RegisterScreen = () => {
             <LoginBannerComponent height={"50%"}/>
             <Text>Digite seus dados abaixo:</Text>
             <View style={{
-                paddingHorizontal: 40
+                paddingHorizontal: 40,
             }}>
                 <View style={{
                     flexDirection:"row",
-                    justifyContent:"space-around"
+                    justifyContent:"space-between",
                 }}>
-                    <InputComponent title={"Nome"}/>
-                    <InputComponent title={"Sobrenome"}/>
+                    <InputComponent width={"90%"} title={"Nome:"}/>
+                    <InputComponent width={"100%"}  title={"Sobrenome:"}/>
                 </View>
-                    <InputComponent width={"60%"} title={"E-mail"}/>
-                    <InputComponent width={"60%"} title={"Senha"}/>
+                    <InputComponent width={"140%"} title={"E-mail:"}/>
+                    <InputComponent width={"140%"} title={"Senha:"} isPassword={true}/>
             </View>
             <TouchableOpacity>
                 <View style={{backgroundColor:"orange", alignSelf:"center", margin:4, padding:8, borderRadius:5,}}>
@@ -45,7 +45,7 @@ export const RegisterScreen = () => {
                         Entrar
                     </Text>
                 </TouchableOpacity>
-            </View>    
+            </View>
         </ContainerComponent>
     )
 }
