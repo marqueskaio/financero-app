@@ -27,7 +27,7 @@ export const RegisterScreen = () => {
                     <InputComponent width={"140%"} title={"Senha:"} isPassword={true}/>
             </View>
             <TouchableOpacity>
-                <View style={{backgroundColor:"orange", alignSelf:"center", margin:4, padding:8, borderRadius:5,}}>
+                <View style={{backgroundColor:"#f27c22", alignSelf:"center", margin:4, padding:8, borderRadius:5,}}>
                     <Text style={{color:"white"}}>
                         Criar Conta
                     </Text>
@@ -41,7 +41,7 @@ export const RegisterScreen = () => {
                     Já tenho conta.
                 </Text>
                 <TouchableOpacity onPress={() => navigation.navigate("Auth")}>
-                    <Text style={{color:"orange"}}>
+                    <Text style={{color:"#f27c22"}}>
                         Entrar
                     </Text>
                 </TouchableOpacity>

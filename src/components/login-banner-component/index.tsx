@@ -9,7 +9,7 @@ export const LoginBannerComponent = ({height, width}:props) =>{
     return(
         <View
             style={{
-                backgroundColor:"orange",
+                backgroundColor:"#f27c22",
                 width:!width ? "100%" : width,
                 height:!height ? "40%" : height,
                 flexDirection:"row",

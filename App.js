@@ -5,23 +5,25 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import {HomeScreen} from "./src/screens/home-screen";
 import 'react-native-gesture-handler';
-import {AuthScreen} from "./src/screens/auth-screen";
-import {RegisterScreen} from "./src/screens/register-screen";
+import {AuthScreen} from "./src/screens/sign-in-screen";
+import {RegisterScreen} from "./src/screens/sign-up-screen";
+import {MyRegistersScreen} from "./src/screens/my-registers-screen";
+import {HomeStack} from "./src/stacks/home-stack";
 
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const [logged, setLogged] = useState(false)
+  const [logged, setLogged] = useState(true)
 
 
     return (
       <NavigationContainer>
         {logged ? (
           <Tab.Navigator tabBar={props => <View {...props} />} screenOptions={{headerShown: false}}>
-            <Tab.Screen name="Home" component={HomeScreen}/>
-            <Tab.Screen name="Sobre" component={HomeScreen}/>
+            <Tab.Screen name="HomeStack" component={HomeStack}/>
+            <Tab.Screen name="MyRegisterStack" component={MyRegistersScreen}/>
           </Tab.Navigator>
         ) : (
           <Stack.Navigator screenOptions={{headerShown: false}}>

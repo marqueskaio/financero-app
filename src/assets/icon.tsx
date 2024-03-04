@@ -27,3 +27,47 @@ export const ClosedEyeIcon = ({width=24, height=24, color="black"}: IconProps) =
         </Svg>
     )
 }
+
+export const LogoIcon  = ({width=24, height=24, color="black"}: IconProps) => {
+    return (
+        <Svg width={width} viewBox="0 0 103.5 103.499997" height={height} preserveAspectRatio="xMidYMid meet">
+                <Path
+                    d="M 0 0 L 103.003906 0 L 103.003906 103.003906 L 0 103.003906 Z M 0 0 "
+                    stroke-linecap="round"
+                    clip-rule="nonzero"/>
+                <Path
+                    d="M 0.597656 0.597656 L 102.402344 0.597656 L 102.402344 102.402344 L 0.597656 102.402344 Z M 0.597656 0.597656 "
+                    stroke-linecap="round"
+                    clip-rule="nonzero"/>
+                <Path
+                    d="M 51.5 0.597656 C 23.386719 0.597656 0.597656 23.386719 0.597656 51.5 C 0.597656 79.613281 23.386719 102.402344 51.5 102.402344 C 79.613281 102.402344 102.402344 79.613281 102.402344 51.5 C 102.402344 23.386719 79.613281 0.597656 51.5 0.597656 Z M 51.5 0.597656 "
+                    stroke-linecap="round"
+                    clip-rule="nonzero"/>
+                <Path
+                    d="M 28.878906 19.242188 L 74 19.242188 L 74 83.679688 L 28.878906 83.679688 Z M 28.878906 19.242188 "
+                    clip-rule="nonzero"/>
+                <Path
+                    fill="#ffffff" d="M 0 0 L 103.003906 0 L 103.003906 103.003906 L 0 103.003906 Z M 0 0 "
+                    fill-opacity="1"
+                    stroke-linecap="round"
+                    fill-rule="nonzero"/>
+                <Path
+                    fill="#ffffff"
+                    d="M 0.597656 0.597656 L 102.402344 0.597656 L 102.402344 102.402344 L 0.597656 102.402344 Z M 0.597656 0.597656 "
+                    fill-opacity="1"
+                    stroke-linecap="round"
+                    fill-rule="nonzero"/>
+                <Path
+                    fill="#f27c22"
+                    d="M 73.988281 55.53125 L 73.988281 43.433594 L 51.8125 43.433594 L 51.8125 55.53125 L 73.988281 55.53125 "
+                    fill-opacity="1"
+                    fill-rule="nonzero"/>
+                <Path
+                    fill="#f27c22"
+                    d="M 28.964844 83.753906 L 28.964844 19.242188 L 73.988281 19.242188 L 73.988281 31.339844 L 41.0625 31.339844 L 41.0625 83.753906 L 28.964844 83.753906 "
+                    fill-opacity="1"
+                    fill-rule="nonzero"/>
+        </Svg>
+
+    )
+}
