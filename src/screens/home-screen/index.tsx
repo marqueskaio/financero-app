@@ -41,7 +41,7 @@ export const HomeScreen = () => {
                     <Text style={{color: "white", fontSize: 22,}}>R$8.998,00</Text>
                 </View>
                 <View style={{backgroundColor: "#f27c22", width: 120, margin: 28, padding: 8, borderRadius: 10}}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate("MyRegisters")}>
                         <Text style={{color: "white", fontSize: 18, textAlign: "center"}}>Registrar</Text>
                     </TouchableOpacity>
                 </View>
@@ -49,7 +49,7 @@ export const HomeScreen = () => {
             <Divider/>
             <View style={{width: "100%", height: "40%", margin: 28}}>
                 <View>
-                    <TouchableOpacity onPress={() => navigation.navigate("MyRegisters")}>
+                    <TouchableOpacity>
                         <Text style={{fontWeight: "bold", fontSize: 24}}>Cartão de crédito</Text>
                     </TouchableOpacity>
                 </View>
