@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import { View, Text, TextInput} from "react-native"
+import React from "react"
+import { View, Text } from "react-native"
 import { ContainerComponent } from "../../hoc/container-component"
 import { LoginBannerComponent } from "../../components/login-banner-component"
 import { InputComponent } from "../../hoc/input-component"
 import { TouchableOpacity } from "react-native-gesture-handler"
 import { useNavigation } from "@react-navigation/native"
 
-export const RegisterScreen = () => {
+export const SignUpScreen = () => {
     const navigation = useNavigation<any>()
 
     return (
@@ -40,7 +40,7 @@ export const RegisterScreen = () => {
                 <Text>
                     Já tenho conta.
                 </Text>
-                <TouchableOpacity onPress={() => navigation.navigate("Auth")}>
+                <TouchableOpacity onPress={() => navigation.navigate("SignIn")}>
                     <Text style={{color:"#f27c22"}}>
                         Entrar
                     </Text>

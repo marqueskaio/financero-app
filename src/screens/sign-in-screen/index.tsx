@@ -5,7 +5,7 @@ import {LoginBannerComponent} from "../../components/login-banner-component";
 import {View, Button, Text} from "react-native";
 import {useNavigation} from "@react-navigation/native";
 
-export const AuthScreen = () => {
+export const SignInScreen = () => {
   const navigate = useNavigation<any>()
 
   return (
@@ -20,7 +20,7 @@ export const AuthScreen = () => {
             <Text
                 style={{paddingVertical:20, textAlign:"center"}}>Ainda não possui conta?</Text>
             <Button
-                onPress={() => navigate.navigate("Register")}
+                onPress={() => navigate.navigate("SignUp")}
                 title={"Criar Conta"}
                 color={"#f27c22"}/>
         </View>
