@@ -11,10 +11,24 @@ export const HomeScreen = () => {
     return (
         <ContainerComponent>
             <AccountHeaderComponent/>
-            <View style={{width: "100%", height: "40%"}}>
-                <View style={{backgroundColor: "#f27c22", width: 160, margin: 28, padding: 8, borderRadius: 10}}>
-                    <Text style={{color: "white", fontSize: 22, fontWeight: "bold"}}>Receita total</Text>
-                    <Text style={{color: "white", fontSize: 22}}>R$8.998,00</Text>
+            <View style={{
+                width: "100%",
+                height: "40%"
+            }}>
+                <View style={{
+                    backgroundColor: "#f27c22",
+                    width: 160,
+                    margin: 28,
+                    padding: 8,
+                    borderRadius: 10
+                }}>
+                    <Text style={{color: "white",
+                        fontSize: 22,
+                        fontWeight: "bold"
+                    }}>Receita total</Text>
+                    <Text style={{color: "white",
+                        fontSize: 22
+                    }}>R$8.998,00</Text>
                 </View>
                 <View style={{
                     backgroundColor: "#f27c22",
