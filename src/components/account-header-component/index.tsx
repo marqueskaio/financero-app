@@ -10,19 +10,22 @@ interface AccountHeaderProps {
 
 export const AccountHeaderComponent = ({ onPress }: AccountHeaderProps) => {
     return (
-        <View style={{ backgroundColor: "#f27c22", width: "100%", height: "21%", padding: 28, }}>
+        <View style={{ backgroundColor: "#f27c22", width: "100%", height: "40%", padding: 28, }}>
             <View style={{ flexDirection: "row", width: "100%" }}>
-                {typeof onPress === "function" ? 
+                {typeof onPress === "function" ?
                     (
-                    <TouchableOpacity onPress={onPress}>
-                        <LeftArrowCircleIcon width={30} height={30}/>
-                    </TouchableOpacity>
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                            <TouchableOpacity onPress={onPress}>
+                                <LeftArrowCircleIcon width={30} height={30} />
+                            </TouchableOpacity>
+                            <Text>Voltar</Text>
+                        </View>
                     )
-                    : 
+                    :
                     (
-                    <View style={{ width: "50%" }}>
-                        <Text style={{ color: "white", fontSize: 28, fontWeight: "bold" }}>Olá, Robertinho</Text>
-                    </View>
+                        <View style={{ width: "50%" }}>
+                            <Text style={{ color: "white", fontSize: 28, fontWeight: "bold" }}>Olá, Robertinho</Text>
+                        </View>
                     )
                 }
                 <View style={{ alignItems: "flex-end", width: "50%" }}>
