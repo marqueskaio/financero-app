@@ -3,7 +3,7 @@ import { View, Text, Button } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ContainerComponent } from "../../hoc/container-component";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { InputComponent } from "../../hoc/input-component";
 
 export const MyRegistersScreen = () => {
@@ -37,23 +37,43 @@ export const MyRegistersScreen = () => {
                     </View>
                 </TouchableOpacity>
             </View>
-            <View style={{paddingHorizontal: 24}}>
-                <View style={{ flexDirection: "row", justifyContent: "space-evenly"}}>
-                    <InputComponent title={"Valor"} width={"75%"}/>
-                    <InputComponent title={"Data"} width={"75%"}/>
+            <View style={{ paddingHorizontal: 24 }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
+                    <InputComponent title={"Valor"} width={"75%"} />
+                    <InputComponent title={"Data"} width={"75%"} />
                 </View>
                 <View>
-                    <InputComponent title={"Descrição"} width={"200%"}/>
+                    <InputComponent title={"Descrição"} width={"200%"} />
                 </View>
             </View>
-            <View style={{paddingHorizontal: 24, alignItems: "flex-end", paddingTop: 24}}>
-                <Button color="#f27c22" title="Registrar"/>
+            <View style={{ paddingHorizontal: 24, alignItems: "flex-end", paddingTop: 24 }}>
+                <Button color="#f27c22" title="Registrar" />
             </View>
-            <View style={{ paddingHorizontal: 24, backgroundColor: "lightgrey", width: "50%", height: 300, alignItems: "center" }}>
+            <View style={{
+                padding: 10,
+                paddingHorizontal: 30,
+                width: "100%",
+                height: 170,
+                flexDirection: 'row',
+                justifyContent: 'space-around'
+            }}>
+                <View style={{}}>
+                    <Text>
+                        Entradas
+                    </Text>
+                </View>
+                <View style={{}}>
+                    <Text>
+                        Saídas
+                    </Text>
+                </View>
+
+            </View>
+            <View style={{alignItems: 'center'}}>
                 <Text>
-                    Entradas
+                    Total Jan
                 </Text>
             </View>
         </ContainerComponent>
-            )
+    )
 }
