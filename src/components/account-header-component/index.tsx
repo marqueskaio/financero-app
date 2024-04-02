@@ -10,7 +10,7 @@ interface AccountHeaderProps {
 
 export const AccountHeaderComponent = ({ onPress }: AccountHeaderProps) => {
     return (
-        <View style={{ backgroundColor: "#f27c22", width: "100%", height: "40%", padding: 28, }}>
+        <View style={{ backgroundColor: "#f27c22", width: "100%", height: "40%", padding: 28 }}>
             <View style={{ flexDirection: "row", width: "100%" }}>
                 {typeof onPress === "function" ?
                     (
