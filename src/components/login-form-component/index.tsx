@@ -1,9 +1,14 @@
-import { useContext } from "react";
-import { Text, TextInput } from "react-native";
+import React, { useContext, useState } from "react";
+import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { UserContext } from "../../contexts/user-context";
+import { ClosedEyeIcon, OpenEyeIcon } from "../../assets/icon";
 
 export const LoginFormComponent = () => {
     const { user, setUser } = useContext(UserContext)
+    const [hidePass, setHidePass] = useState(null)
+    const showPassword = () => {
+        setHidePass(hidePass => !hidePass)
+    }
 
     return (
         <>
@@ -16,9 +21,22 @@ export const LoginFormComponent = () => {
                 placeholder={"Digite seu E-mail"} />
             <Text
                 style={{ fontWeight: "bold", alignItems: "flex-start" }}>Senha:</Text>
-            <TextInput
-                style={{ backgroundColor: "rgba(0,0,0,0.1)", borderRadius: 4, marginBottom: 32 }}
-                placeholder={"Digite sua Senha"} />
+            <View style={{ borderRadius: 4,
+                backgroundColor: "rgba(0,0,0,0.1)",
+                flexDirection: 'row',
+                marginBottom: 30
+                }}>
+                <TextInput
+                    secureTextEntry={hidePass ? true : false}
+                    style={{ width: '100%', flexShrink: 1 }}
+                    placeholder={"Digite sua Senha"} />
+                <TouchableOpacity
+                    onPress={showPassword}>
+                    {hidePass ?
+                        <ClosedEyeIcon /> :
+                        <OpenEyeIcon />}
+                </TouchableOpacity>
+            </View>
         </>
     )
 }
