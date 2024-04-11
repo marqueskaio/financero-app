@@ -15,7 +15,7 @@ export const SignInScreen = () => {
     <ContainerComponent>
        <LoginBannerComponent/>
         <View
-            style={{paddingHorizontal:100,paddingVertical:100}}>
+            style={{ paddingHorizontal:100, paddingVertical:100 }}>
             <LoginFormComponent/>
             <Button
                 onPress={()=>{
