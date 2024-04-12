@@ -5,7 +5,7 @@ import { LinearGradient } from "react-native-linear-gradient";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 interface AccountHeaderProps {
-    onPress: () => void
+    onPress?: () => void
 }
 
 export const AccountHeaderComponent = ({ onPress }: AccountHeaderProps) => {

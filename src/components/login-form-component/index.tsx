@@ -5,15 +5,14 @@ import { ClosedEyeIcon, OpenEyeIcon } from "../../assets/icon";
 
 export const LoginFormComponent = () => {
     const { user, setUser } = useContext(UserContext)
-    const [hidePass, setHidePass] = useState(null)
+    const [hidePass, setHidePass] = useState(true)
     const showPassword = () => {
         setHidePass(hidePass => !hidePass)
     }
 
     return (
         <>
-            <Text
-                style={{ fontWeight: "bold", alignItems: "flex-start" }}>E-mail:</Text>
+            <Text style={{ fontWeight: "bold", alignItems: "flex-start" }}>E-mail:</Text>
             <TextInput
                 //value={user?.email}
                 onChangeText={(text) => setUser({ ...user, email: text })}
@@ -28,7 +27,7 @@ export const LoginFormComponent = () => {
                 backgroundColor: "rgba(0,0,0,0.1)",
                 flexDirection: 'row',
                 marginBottom: 30
-                }}>
+            }}>
                 <TextInput
                     secureTextEntry={hidePass ? true : false}
                     style={{ width: '100%', flexShrink: 1, paddingRight: 4 }}
