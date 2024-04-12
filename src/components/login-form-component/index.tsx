@@ -17,11 +17,14 @@ export const LoginFormComponent = () => {
             <TextInput
                 //value={user?.email}
                 onChangeText={(text) => setUser({ ...user, email: text })}
-                style={{ backgroundColor: "rgba(0,0,0,0.1)", borderRadius: 4, marginBottom: 8 }}
+                style={{ backgroundColor: "rgba(0,0,0,0.1)", borderRadius: 4, marginBottom: 8, paddingHorizontal: 8 }}
                 placeholder={"Digite seu E-mail"} />
             <Text
-                style={{ fontWeight: "bold", alignItems: "flex-start" }}>Senha:</Text>
-            <View style={{ borderRadius: 4,
+                style={{ fontWeight: "bold" }}>Senha:</Text>
+            <View style={{
+                paddingHorizontal: 8,
+                alignItems: 'center',
+                borderRadius: 4,
                 backgroundColor: "rgba(0,0,0,0.1)",
                 flexDirection: 'row',
                 marginBottom: 30
