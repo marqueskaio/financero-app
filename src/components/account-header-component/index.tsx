@@ -18,7 +18,6 @@ export const AccountHeaderComponent = ({ onPress }: AccountHeaderProps) => {
                             <TouchableOpacity onPress={onPress}>
                                 <LeftArrowCircleIcon width={30} height={30} />
                             </TouchableOpacity>
-                            <Text>Voltar</Text>
                         </View>
                     )
                     :

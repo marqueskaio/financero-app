@@ -77,8 +77,7 @@ export const LeftArrowCircleIcon = ({ width = 24, height = 24, color = "white" }
         <Svg width="38" height="38" viewBox="0 0 24 24" fill="none" color={color} >
             <Path
                 d="M10 19L3 12M3 12L10 5M3 12L21 12"
-                stroke="#111827"
-                stroke-width="2"
+                stroke="white"
                 stroke-linecap="round"
                 stroke-linejoin="round" />
         </Svg>
