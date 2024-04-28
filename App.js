@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
 import { SignInScreen } from "./src/screens/sign-in-screen";
-import { SignUpScreen } from "./src/screens/sign-up-screen";
+import { SignUpScreen } from "./src/screens/sign-up-screen/SignUpScreen";
 import { MyRegistersScreen } from "./src/screens/my-registers-screen";
 import { HomeStack } from "./src/stacks/home-stack";
 
