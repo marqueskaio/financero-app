@@ -13,34 +13,36 @@ export const SignUpScreen = () => {
     const showPassword = () => {
         setHidePass(hidePass => !hidePass);
     };
-    const [password, setPassword] = useState({
-        pass1: "",
-        pass2: ""
-    });
 
     return (
         <ContainerComponent>
             <LoginBannerComponent height={"50%"} />
             <Text>Digite seus dados abaixo:</Text>
             <View style={{ paddingHorizontal: 40 }}>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", backgroundColor: 'green' }}>
-                    <View style={{ width: '50%', backgroundColor: 'red' }}>
+                <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+                    <View style={{ width: '50%', paddingRight: 20 }}>
                         <Text>Nome:</Text>
-                        <TextInput style={{
-                            backgroundColor: 'lightgrey',
-                        }}>
-                        </TextInput>
+                        <TextInput id="nome" style={{ backgroundColor: 'lightgrey' }} maxLength={34}></TextInput>
                     </View>
-                    <View style={{ flexGrow: 1 }}>
-                        <Text>Senha:</Text>
-                        <TextInput style={{
-                            backgroundColor: 'lightgrey',
-                        }}></TextInput>
+                    <View style={{ width: '50%', paddingRight: 20 }}>
+                        <Text>Sobrenome:</Text>
+                        <TextInput id="sobrenome" style={{ backgroundColor: 'lightgrey' }}></TextInput>
                     </View>
                 </View>
-                <InputComponent width={"140%"} title={"E-mail:"} />
-                <InputComponent width={"125%"} title={"Senha:"} value={password.pass1} password={password} setPassword={setPassword} />
-                <InputComponent width={"125%"} title={"Confirmação de senha:"} value={password.pass2} password={password} setPassword={setPassword} />
+                <View>
+                    <Text>E-mail:</Text>
+                    <TextInput id="email" style={{ backgroundColor: 'lightgrey', width: '70%' }}></TextInput>
+                </View>
+                <View>
+                    <Text>Senha:</Text>
+                    <TextInput id="senha" style={{ backgroundColor: 'lightgrey', width: '70%' }}></TextInput>
+                </View>
+                <View>
+                    <Text>Confirmação de senha:</Text>
+                    <TextInput id="confsenha" style={{ backgroundColor: 'lightgrey', width: '70%' }}></TextInput>
+                </View>
+                {/* <InputComponent width={"125%"} title={"Senha:"} value={password.pass1} password={password} setPassword={setPassword} />
+                <InputComponent width={"125%"} title={"Confirmação de senha:"} value={password.pass2} password={password} setPassword={setPassword} /> */}
             </View>
             <TouchableOpacity
 
