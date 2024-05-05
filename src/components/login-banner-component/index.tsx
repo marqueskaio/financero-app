@@ -32,7 +32,7 @@ export const LoginBannerComponent = ({ height, width }: props) => {
                     fontWeight: "bold",
                     color: "white",
                     fontSize: 60
-                }}>Financero</Text>
+                }}>Financeiro</Text>
         </LinearGradient>
     )
 }

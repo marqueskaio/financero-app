@@ -34,7 +34,7 @@ export const LoginFormComponent = () => {
                 marginBottom: 30
             }}>
                 <TextInput
-                    secureTextEntry={hidePass ? true : false}
+                    secureTextEntry={hidePass}
                     style={{ width: '100%', flexShrink: 1, paddingRight: 4 }}
                     placeholder={"Digite sua Senha"} />
                 <TouchableOpacity
