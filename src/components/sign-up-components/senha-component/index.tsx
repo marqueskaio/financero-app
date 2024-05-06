@@ -1,8 +1,8 @@
 import {Text, TouchableOpacity, View} from "react-native";
 import {TextInput} from "react-native-gesture-handler";
-import React, {useContext, useState} from "react";
+import React from "react";
 import {ClosedEyeIcon, OpenEyeIcon} from "../../../assets/icon";
-import {UserContext} from "../../../contexts/user-context";
+
 
 interface SenhaComponentProps {
     value: string
@@ -12,7 +12,6 @@ interface SenhaComponentProps {
 }
 
 export const SenhaComponent = ({value, onChangeText, setHidePass, hidePass}: SenhaComponentProps) => {
-    const {user, setUser} = useContext(UserContext)
 
     const showPassword = () => {
         setHidePass((hidePass: any) => !hidePass);
