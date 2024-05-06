@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {View, Text, Button, Alert} from "react-native";
+import {View, Text, Alert} from "react-native";
 import {ContainerComponent} from "../../hoc/container-component";
 import {LoginBannerComponent} from "../../components/login-banner-component";
 import {TouchableOpacity} from "react-native-gesture-handler";
@@ -10,7 +10,7 @@ import {SobreNomeComponent} from "../../components/sign-up-components/sobrenome-
 import {EmailComponent} from "../../components/sign-up-components/email-component";
 import {SenhaComponent} from "../../components/sign-up-components/senha-component";
 import {ConfSenhaComponent} from "../../components/sign-up-components/confsenha-component";
-import {Dialog, Portal} from "react-native-paper";
+
 
 export const SignUpScreen = () => {
     const navigation = useNavigation<any>();
@@ -25,6 +25,7 @@ export const SignUpScreen = () => {
             confSenha: ""
         }
     )
+
 
     return (
         <ContainerComponent>
@@ -66,22 +67,24 @@ export const SignUpScreen = () => {
                         setSignUpData({...signUpData, confSenha: value})
                         console.log(signUpData)
                     }}/>
-                {/*<InputComponent width={"125%"} title={"Senha:"} value={password.pass1} password={password} setPassword={setPassword} />*/}
-                {/*<InputComponent width={"125%"} title={"Confirmação de senha:"} value={password.pass2} password={password} setPassword={setPassword} />*/}
             </View>
             <TouchableOpacity
+
                 onPress={() => {
                     {
                         signUpData.senha === signUpData.confSenha ?
                             (api.post("/user", signUpData).then((response) => {
                                 console.log(response)
                             })) : (
-                                <Portal>
-                                    <Dialog>
-
-                                    </Dialog>
-                                </Portal>
+                                Alert.alert("Senha não confere!",
+                                    "Verifique e tente novamente.",
+                                    [
+                                        {text: 'Cancel'},
+                                        {text: 'OK'}
+                                    ]
+                                )
                             )
+
                     }
                 }}
             >
