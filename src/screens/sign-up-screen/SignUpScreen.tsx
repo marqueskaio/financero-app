@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {View, Text, Alert} from "react-native";
 import {ContainerComponent} from "../../hoc/container-component";
 import {LoginBannerComponent} from "../../components/login-banner-component";
@@ -10,18 +10,20 @@ import {SobreNomeComponent} from "../../components/sign-up-components/sobrenome-
 import {EmailComponent} from "../../components/sign-up-components/email-component";
 import {SenhaComponent} from "../../components/sign-up-components/senha-component";
 import {ConfSenhaComponent} from "../../components/sign-up-components/confsenha-component";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {AppContext} from "../../contexts/app-context";
 
 
 export const SignUpScreen = () => {
     const navigation = useNavigation<any>();
     const [hidePass, setHidePass] = useState(true);
-
+    const {setLogged} = useContext(AppContext)
     const [signUpData, setSignUpData] = useState(
         {
             name: "",
-            sobrenome: "",
+            undername: "",
             email: "",
-            senha: "",
+            password: "",
             confSenha: ""
         }
     )
@@ -40,9 +42,9 @@ export const SignUpScreen = () => {
                             console.log(signUpData)
                         }}/>
                     <SobreNomeComponent
-                        value={signUpData.sobrenome}
+                        value={signUpData.undername}
                         onChangeText={(value) => {
-                            setSignUpData({...signUpData, sobrenome: value})
+                            setSignUpData({...signUpData, undername: value})
                             console.log(signUpData)
                         }}/>
                 </View>
@@ -55,9 +57,9 @@ export const SignUpScreen = () => {
                 <SenhaComponent
                     setHidePass={setHidePass}
                     hidePass={hidePass}
-                    value={signUpData.senha}
+                    value={signUpData.password}
                     onChangeText={(value) => {
-                        setSignUpData({...signUpData, senha: value})
+                        setSignUpData({...signUpData, password: value})
                         console.log(signUpData)
                     }}/>
                 <ConfSenhaComponent
@@ -72,10 +74,20 @@ export const SignUpScreen = () => {
 
                 onPress={() => {
                     {
-                        signUpData.senha === signUpData.confSenha ?
-                            (api.post("/user", signUpData).then((response) => {
-                                console.log(response)
-                            })) : (
+                        signUpData.password === signUpData.confSenha ?
+                            (api.post("sign-up/user", {
+                                name: signUpData.name,
+                                undername: signUpData.undername,
+                                email: signUpData.email,
+                                password: signUpData.password
+                            }).then(async (response) => {
+                                await AsyncStorage.setItem('user', JSON.stringify(response?.data))
+                                await AsyncStorage.setItem('token', response?.data?.accessToken)
+                                setLogged(true)
+                            }).catch((e) => {
+                                console.log(e)
+                            })
+                            ) : (
                                 Alert.alert("Senha não confere!",
                                     "Verifique e tente novamente.",
                                     [

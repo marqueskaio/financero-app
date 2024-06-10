@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "dream-book-app",
-    "slug": "dream-book-app",
+    "name": "financero-app",
+    "slug": "financero-app",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
