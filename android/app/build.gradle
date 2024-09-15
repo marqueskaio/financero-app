@@ -113,9 +113,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.financero"
+    namespace "com.financeroapp"
     defaultConfig {
-        applicationId "com.financero"
+        applicationId "com.financeroapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
