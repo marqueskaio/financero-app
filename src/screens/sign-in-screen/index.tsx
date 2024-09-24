@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, { useContext } from "react";
 import { ContainerComponent } from "../../hoc/container-component";
 import { LoginFormComponent } from "../../components/login-form-component";
 import { LoginBannerComponent } from "../../components/login-banner-component";
@@ -15,9 +15,9 @@ export const SignInScreen = () => {
     <ContainerComponent>
       <LoginBannerComponent />
       <View
-        style={{ paddingHorizontal: 100, paddingVertical: 100 }}>
+        style={{ paddingHorizontal: 80, paddingVertical: 100 }}>
         <LoginFormComponent />
-        <Button
+        <Button 
           onPress={() => {
             api.post("/sign-in", {
               email: user.email
