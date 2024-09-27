@@ -1,12 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import {View, Text, TouchableOpacity} from "react-native";
 import {Divider} from 'react-native-paper';
 import {ContainerComponent} from "../../hoc/container-component";
 import {AccountHeaderComponent} from "../../components/account-header-component";
 import {useNavigation} from "@react-navigation/native";
+import {AppContext} from "../../contexts/app-context";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 export const HomeScreen = () => {
+    const {logged, setLogged} = useContext(AppContext);
     const navigation = useNavigation<any>();
     return (
         <ContainerComponent>
@@ -45,7 +48,26 @@ export const HomeScreen = () => {
                         <Text style={{color: "white", fontSize: 18, textAlign: "center"}}>Registrar</Text>
                     </TouchableOpacity>
                 </View>
+                <TouchableOpacity
+                    style={{
+                        backgroundColor: "#f27c22",
+                        width: 120,
+                        margin: 28,
+                        padding: 8,
+                        borderRadius: 10
+                    }}
+                    onPress={() => {
+                        AsyncStorage.clear().then(() => {
+                            setLogged(false)
+                        })
+                    }}>
+                    <Text style={{color: "white",
+                        fontSize: 18,
+                        textAlign: "center"
+                    }}>Sair</Text>
+                </TouchableOpacity>
             </View>
+
             <Divider/>
             <View style={{width: "100%", height: "40%", margin: 28}}>
                 <View>

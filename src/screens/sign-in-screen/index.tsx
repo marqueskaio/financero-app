@@ -6,10 +6,13 @@ import { View, Button, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { UserContext } from "../../contexts/user-context";
 import { api } from "../../services/api"
+import {AppContext} from "../../contexts/app-context";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const SignInScreen = () => {
   const navigate = useNavigation<any>()
   const { user } = useContext(UserContext)
+  const { logged, setLogged } = useContext(AppContext)
 
   return (
     <ContainerComponent>
@@ -17,22 +20,6 @@ export const SignInScreen = () => {
       <View
         style={{ paddingHorizontal: 80, paddingVertical: 100 }}>
         <LoginFormComponent />
-        <Button 
-          onPress={() => {
-            api.post("/sign-in", {
-              email: user.email
-            }).then((response) => {
-              console.log(response)
-            })
-          }}
-          title={"Entrar"}
-          color={"#f27c22"} />
-        <Text
-          style={{ paddingVertical: 20, textAlign: "center" }}>Ainda não possui conta?</Text>
-        <Button
-          onPress={() => navigate.navigate("SignUp")}
-          title={"Criar Conta"}
-          color={"#f27c22"} />
       </View>
     </ContainerComponent>
   )
