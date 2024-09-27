@@ -1,16 +1,26 @@
 import { AccountHeaderComponent } from "../../components/account-header-component";
-import { View, Text, Button } from "react-native";
+import {View, Text, Button, TextInput} from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { ContainerComponent } from "../../hoc/container-component";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import { InputComponent } from "../../hoc/input-component";
+import {api} from "../../services/api";
+import IncomesTable from "../../tables/incomes-table/incomes-table";
 
 export const MyRegistersScreen = () => {
     const navigation = useNavigation<any>()
+    const [receita, setReceita] = useState<any>({value: 0, data: "", description: "", category: "any"})
     const [hover, setHover] = useState<any>(false)
     let despesaColor = !hover ? "grey" : "#f27c22"
     let receitaColor = hover ? "grey" : "#f27c22"
+
+    const registrarCompra = (receita: any) => {
+        api.post("/incomes", receita).then((response) => {
+            setReceita({value: 0, data: "", description: "", category: "any"})
+            console.log(response)
+        })
+    }
 
     return (
         <ContainerComponent>
@@ -39,41 +49,17 @@ export const MyRegistersScreen = () => {
             </View>
             <View style={{ paddingHorizontal: 24 }}>
                 <View style={{ flexDirection: "row", justifyContent: "space-evenly" }}>
-                    <InputComponent title={"Valor"} width={"75%"} />
-                    <InputComponent title={"Data"} width={"75%"} />
+                    <TextInput value={receita.value} onChangeText={(text) => setReceita({...receita, value: text})} placeholder="Valor" style={{ width: "50%", borderBottomWidth: 1, borderBottomColor: "grey" }} />
+                    <TextInput value={receita.data} onChangeText={(text) => setReceita({...receita, data: text})} placeholder="Data" style={{ width: "50%", borderBottomWidth: 1, borderBottomColor: "grey" }} />
                 </View>
-                <View>
-                    <InputComponent title={"Descrição"} width={"200%"} />
+                <View style={{justifyContent: "space-evenly"}}>
+                    <TextInput value={receita.description} onChangeText={(text) => setReceita({...receita, description: text})} placeholder="Descrição" style={{ marginTop: 8, alignSelf: "flex-start", width: "80%", borderBottomWidth: 1, borderBottomColor: "grey" }} />
                 </View>
             </View>
             <View style={{ paddingHorizontal: 24, alignItems: "flex-end", paddingTop: 24 }}>
-                <Button color="#f27c22" title="Registrar" />
+                <Button color="#f27c22" title="Registrar" onPress={() => registrarCompra(receita)}/>
             </View>
-            <View style={{
-                padding: 10,
-                paddingHorizontal: 30,
-                width: "100%",
-                height: 170,
-                flexDirection: 'row',
-                justifyContent: 'space-around'
-            }}>
-                <View style={{}}>
-                    <Text>
-                        Entradas
-                    </Text>
-                </View>
-                <View style={{}}>
-                    <Text>
-                        Saídas
-                    </Text>
-                </View>
-
-            </View>
-            <View style={{alignItems: 'center'}}>
-                <Text>
-                    Total Jan
-                </Text>
-            </View>
+                <IncomesTable/>
         </ContainerComponent>
     )
 }
